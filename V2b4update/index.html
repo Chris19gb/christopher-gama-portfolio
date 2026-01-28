@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christopher Gama | Water Resources Management Specialist</title>
+    
+    <!-- Meta tags for SEO -->
+    <meta name="description" content="Christopher Gama - Water Resources Management & Development Specialist | GIS | Hydrological Modeling | WASH | MEAL | Python">
+    <meta name="keywords" content="water resources, hydrology, GIS, SWAT, WASH, Malawi, remote sensing, Python, QGIS, Google Earth Engine">
+    <meta name="author" content="Christopher Gama">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Leaflet CSS for maps -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Preload hero image -->
+    <link rel="preload" href="https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80" as="image">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Christopher Gama</a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#publications">Insights</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun" style="display: none;"></i>
+                    </button>
+                </li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Christopher Gama</h1>
+                <h2 class="hero-subtitle">Water Resources Management & Development Specialist</h2>
+                <p class="hero-tagline">Bridging Data, Hydrology, and Community Impact for Sustainable Water Solutions</p>
+                
+                <div class="hero-skills">
+                    <div class="skills-container">
+                        <div class="skill-item" data-skill="GIS">
+                            <i class="fas fa-map"></i>
+                            <span>GIS Analysis</span>
+                        </div>
+                        <div class="skill-item" data-skill="SWAT">
+                            <i class="fas fa-water"></i>
+                            <span>Hydrological Modeling</span>
+                        </div>
+                        <div class="skill-item" data-skill="WASH">
+                            <i class="fas fa-hand-holding-water"></i>
+                            <span>WASH Solutions</span>
+                        </div>
+                        <div class="skill-item" data-skill="Python">
+                            <i class="fab fa-python"></i>
+                            <span>Data Analysis</span>
+                        </div>
+                        <div class="skill-item" data-skill="MEAL">
+                            <i class="fas fa-chart-line"></i>
+                            <span>MEAL Systems</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="hero-buttons">
+                    <a href="#portfolio" class="btn btn-primary">View My Portfolio</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <div class="profile-placeholder">
+                        <i class="fas fa-user-circle"></i>
+                        <p>Profile Photo</p>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <p class="about-intro">A dedicated Water Resources professional from Malawi, I leverage geospatial technology (QGIS, GEE) and hydrological models (SWAT) to tackle real-world challenges in water security, drought resilience, and sustainable WASH.</p>
+                    
+                    <p>My experience ranges from community mobilization in Nkhata-Bay to data analysis for international NGOs. I'm passionate about using technology to empower communities and protect vital water resources.</p>
+                    
+                    <div class="about-details">
+                        <div class="detail-item">
+                            <strong>Location:</strong> Malawi
+                        </div>
+                        <div class="detail-item">
+                            <strong>Education:</strong> BSc. Water Resources Management & Development, Mzuzu University
+                        </div>
+                        <div class="detail-item">
+                            <strong>Focus Areas:</strong> Hydrology, Climate Change, WASH, GIS, Data Analysis
+                        </div>
+                        <div class="detail-item">
+                            <strong>Languages:</strong> English (Fluent), Chichewa (Native)
+                        </div>
+                    </div>
+                    
+                    <div class="about-buttons">
+                        <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                        <a href="#" class="btn btn-outline" onclick="return false;">Download CV (Coming Soon)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section id="expertise" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Core Expertise</h2>
+            
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-globe-africa"></i>
+                    </div>
+                    <h3>Geospatial Analysis</h3>
+                    <p>QGIS, ArcGIS, Google Earth Engine, Remote Sensing, Spatial Analysis</p>
+                    <div class="expertise-tags">
+                        <span class="tag">QGIS</span>
+                        <span class="tag">ArcGIS</span>
+                        <span class="tag">GEE</span>
+                        <span class="tag">Remote Sensing</span>
+                    </div>
+                </div>
+                
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3>Hydrological Modeling</h3>
+                    <p>SWAT Model, Water Resource Assessment, Drought Monitoring, Hydrological Analysis</p>
+                    <div class="expertise-tags">
+                        <span class="tag">SWAT</span>
+                        <span class="tag">Hydrology</span>
+                        <span class="tag">Modeling</span>
+                        <span class="tag">Drought Analysis</span>
+                    </div>
+                </div>
+                
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Data Science & MEAL</h3>
+                    <p>Python, Data Analysis, Kobo Toolbox, Looker Studio, Monitoring & Evaluation</p>
+                    <div class="expertise-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Kobo</span>
+                        <span class="tag">Looker Studio</span>
+                        <span class="tag">Data Analysis</span>
+                    </div>
+                </div>
+                
+                <div class="expertise-card">
+                    <div class="expertise-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>WASH & Project Management</h3>
+                    <p>Water Sanitation & Hygiene, Community Mobilization, Field Coordination, Reporting</p>
+                    <div class="expertise-tags">
+                        <span class="tag">WASH</span>
+                        <span class="tag">Community</span>
+                        <span class="tag">Management</span>
+                        <span class="tag">Field Work</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title">Technical Proficiency</h2>
+            <p class="section-subtitle">Software tools and technical skills I work with</p>
+            
+            <div class="skills-content">
+                <div class="skill-category">
+                    <h3><i class="fas fa-map-marked-alt"></i> Geospatial Tools</h3>
+                    <div class="skill-meter">
+                        <div class="skill-info">
+                            <span>QGIS / ArcGIS</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-level="95"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-meter">
+                        <div class="skill-info">
+                            <span>Google Earth Engine</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-level="90"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-meter">
+                        <div class="skill-info">
+                            <span>Remote Sensing</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-level="85"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-laptop-code"></i> Programming & Data</h3>
+                    <div class="skill-meter">
+                        <div class="skill-info">
+                            <span>Python (Pandas, GeoPandas)</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-level="85"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-meter">
+                        <div class="skill-info">
+                            <span>Data Analysis & Visualization</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-level="90"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-meter">
+                        <div class="skill-info">
+                            <span>Kobo Toolbox / ODK</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-level="95"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3><i class="fas fa-tools"></i> Water Resources Tools</h3>
+                    <div class="skill-meter">
+                        <div class="skill-info">
+                            <span>SWAT Hydrological Model</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-level="80"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-meter">
+                        <div class="skill-info">
+                            <span>WASH Project Management</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-level="90"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-meter">
+                        <div class="skill-info">
+                            <span>MEAL Systems</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-level" data-level="85"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Project Portfolio</h2>
+            <p class="section-subtitle">Showcasing my technical and field expertise in water resources management</p>
+            
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="gis">GIS & Remote Sensing</button>
+                <button class="filter-btn" data-filter="modeling">Hydrological Modeling</button>
+                <button class="filter-btn" data-filter="wash">WASH & Community</button>
+                <button class="filter-btn" data-filter="data">Data Analysis</button>
+            </div>
+            
+            <div class="portfolio-grid">
+                <!-- Project 1 -->
+                <div class="portfolio-card" data-category="gis data">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder map-placeholder" id="map1"></div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Spatio-Temporal Drought Analysis</h3>
+                        <p class="portfolio-tools"><i class="fas fa-tools"></i> Google Earth Engine, QGIS, Python</p>
+                        <p>Conceptual analysis of drought vulnerability in the Lake Malawi Basin using remote sensing data and climate indices.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">GIS</span>
+                            <span class="tag">Remote Sensing</span>
+                            <span class="tag">Drought</span>
+                            <span class="tag">Python</span>
+                        </div>
+                        <button class="btn btn-small" onclick="openModal('modal1')">View Details</button>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="portfolio-card" data-category="wash community">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-tree"></i>
+                            <p>Community Conservation</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Community-Led Environmental Conservation</h3>
+                        <p class="portfolio-tools"><i class="fas fa-tools"></i> Field Coordination, Community Mobilization</p>
+                        <p>Led environmental initiatives in Nkhata-Bay, mobilizing communities for tree planting, waste management, and climate awareness.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">WASH</span>
+                            <span class="tag">Community</span>
+                            <span class="tag">Climate</span>
+                            <span class="tag">Conservation</span>
+                        </div>
+                        <button class="btn btn-small" onclick="openModal('modal2')">View Details</button>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="portfolio-card" data-category="data meal">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder">
+                            <canvas id="dataChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>MEAL Data Pipeline & Dashboard</h3>
+                        <p class="portfolio-tools"><i class="fas fa-tools"></i> Kobo Toolbox, Python, Looker Studio</p>
+                        <p>Designed and implemented a data collection and visualization system for monitoring community project impact.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">MEAL</span>
+                            <span class="tag">Data Analysis</span>
+                            <span class="tag">Dashboard</span>
+                            <span class="tag">Kobo</span>
+                        </div>
+                        <button class="btn btn-small" onclick="openModal('modal3')">View Details</button>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="portfolio-card" data-category="modeling gis">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-project-diagram"></i>
+                            <p>Hydrological Model</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>SWAT Hydrological Modeling</h3>
+                        <p class="portfolio-tools"><i class="fas fa-tools"></i> SWAT Model, QGIS, Hydrological Data</p>
+                        <p>Setup and calibration of SWAT model for catchment water balance assessment and scenario analysis.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">SWAT</span>
+                            <span class="tag">Hydrology</span>
+                            <span class="tag">Modeling</span>
+                            <span class="tag">QGIS</span>
+                        </div>
+                        <button class="btn btn-small" onclick="openModal('modal4')">View Details</button>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="portfolio-card" data-category="data visualization">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-chart-bar"></i>
+                            <p>Water Quality Analysis</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Water Quality Monitoring System</h3>
+                        <p class="portfolio-tools"><i class="fas fa-tools"></i> Python, Statistical Analysis, Data Visualization</p>
+                        <p>Developed a system for monitoring and analyzing water quality parameters across multiple sampling sites.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Data Viz</span>
+                            <span class="tag">Analysis</span>
+                            <span class="tag">Monitoring</span>
+                        </div>
+                        <button class="btn btn-small" onclick="openModal('modal5')">View Details</button>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="portfolio-card" data-category="wash gis">
+                    <div class="portfolio-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Water Point Mapping</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <h3>Water Point Mapping & Analysis</h3>
+                        <p class="portfolio-tools"><i class="fas fa-tools"></i> QGIS, Field Survey, Spatial Analysis</p>
+                        <p>Mapping and analysis of water points for improved WASH planning and resource allocation in rural communities.</p>
+                        <div class="portfolio-tags">
+                            <span class="tag">GIS</span>
+                            <span class="tag">WASH</span>
+                            <span class="tag">Mapping</span>
+                            <span class="tag">Field Work</span>
+                        </div>
+                        <button class="btn btn-small" onclick="openModal('modal6')">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">Sep 2025 – Dec 2025</div>
+                    <div class="timeline-content">
+                        <h3>MEAL Assistant (Intern)</h3>
+                        <h4>FIND YOUR FEET - Malawi</h4>
+                        <ul>
+                            <li>Designed and managed a data collection system using Kobo Toolbox for field monitoring</li>
+                            <li>Conducted data analysis and created visual dashboards to track project KPIs</li>
+                            <li>Documented success stories and lessons learned to showcase project impact</li>
+                            <li>Maintained organized project records for accountability and reporting</li>
+                        </ul>
+                        <div class="experience-tags">
+                            <span class="tag">MEAL</span>
+                            <span class="tag">Kobo Toolbox</span>
+                            <span class="tag">Data Analysis</span>
+                            <span class="tag">Reporting</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-date">Jul 2023 – Aug 2025</div>
+                    <div class="timeline-content">
+                        <h3>Field Officer</h3>
+                        <h4>Go Green Save Environment, Nkhata-Bay</h4>
+                        <ul>
+                            <li>Mobilized and trained community volunteers for environmental conservation initiatives</li>
+                            <li>Led tree planting campaigns and climate change awareness programs</li>
+                            <li>Implemented digital data collection tools for monitoring project progress</li>
+                            <li>Coordinated field logistics and supervised volunteer activities</li>
+                            <li>Prepared detailed monthly field reports and maintained community engagement</li>
+                        </ul>
+                        <div class="experience-tags">
+                            <span class="tag">Community Mobilization</span>
+                            <span class="tag">Field Coordination</span>
+                            <span class="tag">Environmental Conservation</span>
+                            <span class="tag">Project Management</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Education & Certifications -->
+            <div class="education-section">
+                <h3 class="subsection-title">Education & Certifications</h3>
+                <div class="education-grid">
+                    <div class="education-card">
+                        <h4><i class="fas fa-graduation-cap"></i> BSc. Water Resources Management & Development</h4>
+                        <p>Mzuzu University | 2020 - 2024</p>
+                        <p class="education-desc">Specialized in hydrology, water quality, GIS applications, and sustainable water management practices.</p>
+                    </div>
+                    <div class="education-card">
+                        <h4><i class="fas fa-certificate"></i> GIS Certification</h4>
+                        <p>WATSAN/SMART Centre, Mzuzu University | 2024-2025</p>
+                        <p class="education-desc">Advanced training in spatial analysis, remote sensing, and GIS applications for water resources.</p>
+                    </div>
+                    <div class="education-card">
+                        <h4><i class="fas fa-certificate"></i> WASH Certification</h4>
+                        <p>WATSAN/SMART Centre, Mzuzu University | 2024-2025</p>
+                        <p class="education-desc">Comprehensive training in Water, Sanitation and Hygiene project design and implementation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications & Insights Section -->
+    <section id="publications" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Publications & Insights</h2>
+            <p class="section-subtitle">Thought leadership and technical insights on water resources management</p>
+            
+            <div class="publications-grid">
+                <article class="publication-card">
+                    <div class="publication-date">Jan 2025</div>
+                    <h3 class="publication-title">Getting Started with Hydrological Modeling using SWAT</h3>
+                    <p class="publication-excerpt">A beginner's guide to setting up and running SWAT models for water resource assessment in data-scarce regions like Malawi.</p>
+                    <div class="publication-tags">
+                        <span class="tag">SWAT</span>
+                        <span class="tag">Hydrology</span>
+                        <span class="tag">Tutorial</span>
+                    </div>
+                    <a href="#" class="read-more" onclick="return false;">Read Article <i class="fas fa-arrow-right"></i></a>
+                </article>
+                
+                <article class="publication-card">
+                    <div class="publication-date">Dec 2024</div>
+                    <h3 class="publication-title">Google Earth Engine for Water Resources Monitoring</h3>
+                    <p class="publication-excerpt">Leveraging cloud computing and satellite imagery to monitor water resources in near-real-time across Malawi.</p>
+                    <div class="publication-tags">
+                        <span class="tag">GEE</span>
+                        <span class="tag">Remote Sensing</span>
+                        <span class="tag">Python</span>
+                    </div>
+                    <a href="#" class="read-more" onclick="return false;">Read Article <i class="fas fa-arrow-right"></i></a>
+                </article>
+                
+                <article class="publication-card">
+                    <div class="publication-date">Nov 2024</div>
+                    <h3 class="publication-title">Integrating MEAL Practices in Community WASH Projects</h3>
+                    <p class="publication-excerpt">How effective Monitoring, Evaluation, Accountability and Learning systems strengthen community water and sanitation initiatives.</p>
+                    <div class="publication-tags">
+                        <span class="tag">WASH</span>
+                        <span class="tag">MEAL</span>
+                        <span class="tag">Community</span>
+                    </div>
+                    <a href="#" class="read-more" onclick="return false;">Read Article <i class="fas fa-arrow-right"></i></a>
+                </article>
+                
+                <article class="publication-card">
+                    <div class="publication-date">Oct 2024</div>
+                    <h3 class="publication-title">Climate Change Impacts on Malawi's Water Resources</h3>
+                    <p class="publication-excerpt">Analysis of climate projections and their implications for water security, agriculture, and community livelihoods in Malawi.</p>
+                    <div class="publication-tags">
+                        <span class="tag">Climate Change</span>
+                        <span class="tag">Water Security</span>
+                        <span class="tag">Analysis</span>
+                    </div>
+                    <a href="#" class="read-more" onclick="return false;">Read Article <i class="fas fa-arrow-right"></i></a>
+                </article>
+            </div>
+            
+            <div class="text-center">
+                <a href="#" class="btn btn-outline" onclick="return false;">View All Articles (Coming Soon)</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Interested in collaboration or have questions about water resources projects?</p>
+            
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <a href="mailto:macdalfchristopher@gmail.com">macdalfchristopher@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>WhatsApp</h4>
+                            <a href="https://wa.me/265990373438" target="_blank">+265 990 37 3438</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>LinkedIn</h4>
+                            <a href="https://www.linkedin.com/in/christopher-gama-50501b2a6" target="_blank">Connect with me</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fab fa-facebook"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Facebook</h4>
+                            <a href="https://web.facebook.com/christopher.gama.336" target="_blank">Christopher Gama</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Malawi</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm" netlify>
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="organization">Organization (Optional)</label>
+                            <input type="text" id="organization" name="organization" placeholder="Your Company/Institution">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="interest">Interest Area *</label>
+                            <select id="interest" name="interest" required>
+                                <option value="" disabled selected>Select an interest area</option>
+                                <option value="consulting">Consulting Opportunity</option>
+                                <option value="collaboration">Research Collaboration</option>
+                                <option value="job">Job Opportunity</option>
+                                <option value="speaking">Speaking Engagement</option>
+                                <option value="question">Technical Question</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Please provide details about your inquiry..." required></textarea>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="newsletter" name="newsletter">
+                            <label for="newsletter">Subscribe to my quarterly newsletter on water resources</label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-loader" style="display: none;">
+                                <i class="fas fa-spinner fa-spin"></i> Sending...
+                            </span>
+                        </button>
+                        
+                        <div class="form-success" style="display: none;">
+                            <i class="fas fa-check-circle"></i>
+                            <p>Thank you! Your message has been sent successfully.</p>
+                        </div>
+                        
+                        <div class="form-error" style="display: none;">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <p>There was an error sending your message. Please try again or email me directly.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Christopher Gama</div>
+                <p class="footer-tagline">Water Resources Specialist | GIS | Hydrological Modeling | WASH</p>
+                
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/christopher-gama-50501b2a6" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://web.facebook.com/christopher.gama.336" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="mailto:macdalfchristopher@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://wa.me/265990373438" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+                
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#" onclick="return false;">Privacy Policy</a>
+                </div>
+                
+                <p class="footer-copyright">&copy; <span id="currentYear"></span> Christopher Gama. All rights reserved.</p>
+                <p class="footer-note">Built with passion for water resources management and sustainable development</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal1')">&times;</span>
+            <h2>Spatio-Temporal Drought Analysis</h2>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <div id="modalMap1" class="map-placeholder-large"></div>
+                </div>
+                <div class="modal-text">
+                    <h3>Project Overview</h3>
+                    <p>This conceptual project demonstrates the use of Google Earth Engine and QGIS for analyzing drought patterns in the Lake Malawi Basin over a 10-year period.</p>
+                    
+                    <h3>Methodology</h3>
+                    <ul>
+                        <li>Collection of MODIS and Landsat satellite imagery</li>
+                        <li>Calculation of NDVI and NDWI indices for vegetation and water stress</li>
+                        <li>Time-series analysis of precipitation data (CHIRPS)</li>
+                        <li>Spatial interpolation and vulnerability mapping</li>
+                    </ul>
+                    
+                    <h3>Tools & Technologies</h3>
+                    <div class="modal-tags">
+                        <span class="tag">Google Earth Engine</span>
+                        <span class="tag">QGIS</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Remote Sensing</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('modal2')">&times;</span>
+            <h2>Community-Led Environmental Conservation</h2>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <div class="image-placeholder-large">
+                        <i class="fas fa-users fa-4x"></i>
+                        <p>Community Engagement</p>
+                    </div>
+                </div>
+                <div class="modal-text">
+                    <h3>Project Overview</h3>
+                    <p>Led environmental conservation initiatives in Nkhata-Bay district, focusing on community mobilization, tree planting, and sustainable livelihood practices.</p>
+                    
+                    <h3>Key Achievements</h3>
+                    <ul>
+                        <li>Mobilized and trained 150+ community volunteers</li>
+                        <li>Planted 5,000+ trees across 10 villages</li>
+                        <li>Conducted 25+ climate awareness workshops</li>
+                        <li>Established 5 community conservation committees</li>
+                    </ul>
+                    
+                    <h3>Skills Applied</h3>
+                    <div class="modal-tags">
+                        <span class="tag">Community Mobilization</span>
+                        <span class="tag">Project Coordination</span>
+                        <span class="tag">Field Work</span>
+                        <span class="tag">Environmental Education</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional modals would go here (modal3 to modal6) -->
+
+    <!-- Leaflet JS for maps -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Main JS -->
+    <script src="script.js"></script>
+</body>
+</html>
