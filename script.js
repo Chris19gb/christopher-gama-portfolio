@@ -165,64 +165,76 @@ function setupDarkMode() {
     });
 }
 
-// Enhanced Contact Form with Netlify support
+// Formspree Contact Form
 function setupContactForm() {
     const contactForm = document.getElementById('contactForm');
     if (!contactForm) return;
     
-    const btnText = contactForm.querySelector('.btn-text');
-    const btnLoader = contactForm.querySelector('.btn-loader');
-    const successMessage = contactForm.querySelector('.form-success');
-    const errorMessage = contactForm.querySelector('.form-error');
-    
     contactForm.addEventListener('submit', async function(e) {
         e.preventDefault();
+        
+        const submitBtn = this.querySelector('button[type="submit"]');
+        const btnText = submitBtn.querySelector('.btn-text');
+        const btnLoader = submitBtn.querySelector('.btn-loader');
         
         // Show loading state
         btnText.style.display = 'none';
         btnLoader.style.display = 'inline-flex';
         
-        // Hide any previous messages
-        successMessage.style.display = 'none';
-        errorMessage.style.display = 'none';
+        // Clear any previous feedback
+        clearFormFeedback(this);
         
         // Validate form
         if (!validateForm(this)) {
-            btnText.style.display = 'inline';
-            btnLoader.style.display = 'none';
-            errorMessage.style.display = 'flex';
-            errorMessage.querySelector('p').textContent = 'Please fill in all required fields correctly.';
+            showFormFeedback(this, 'Please fill in all required fields correctly.', 'error');
+            resetButton(btnText, btnLoader);
             return;
         }
         
+        // Validate file size if file is attached
+        const fileInput = this.querySelector('input[type="file"]');
+        if (fileInput && fileInput.files.length > 0) {
+            const fileSize = fileInput.files[0].size; // in bytes
+            const maxSize = 5 * 1024 * 1024; // 5MB
+            
+            if (fileSize > maxSize) {
+                showFormFeedback(this, 'File size exceeds 5MB limit. Please upload a smaller file.', 'error');
+                resetButton(btnText, btnLoader);
+                return;
+            }
+        }
+        
         try {
-            // For Netlify forms
+            // Create FormData for file upload support
             const formData = new FormData(this);
             
-            // Simulate form submission (replace with actual submission to Netlify)
-            const response = await fetch('/', {
+            // Submit to Formspree
+            const response = await fetch('https://formspree.io/f/xbdygynn', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: new URLSearchParams(formData).toString()
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
             });
             
-            // Show success message
-            successMessage.style.display = 'flex';
-            
-            // Reset form
-            contactForm.reset();
-            
-            // Scroll to success message
-            successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            if (response.ok) {
+                // Show success message
+                showFormFeedback(this, 'Thank you! Your message has been sent successfully. I\'ll respond within 24 hours.', 'success');
+                
+                // Reset form
+                contactForm.reset();
+                
+                console.log('Form submitted successfully to Formspree');
+            } else {
+                const errorData = await response.json();
+                throw new Error(errorData.error || 'Form submission failed');
+            }
             
         } catch (error) {
             console.error('Form submission error:', error);
-            errorMessage.style.display = 'flex';
-            errorMessage.querySelector('p').textContent = 'There was an error sending your message. Please try again or email me directly.';
+            showFormFeedback(this, 'There was an error sending your message. Please try again or email me directly at macdalfchristopher@gmail.com', 'error');
         } finally {
-            // Reset button state
-            btnText.style.display = 'inline';
-            btnLoader.style.display = 'none';
+            resetButton(btnText, btnLoader);
         }
     });
     
@@ -240,8 +252,7 @@ function setupContactForm() {
             }
             
             if (field.type === 'email' && field.value) {
-                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                if (!emailRegex.test(field.value)) {
+                if (!validateEmail(field.value)) {
                     field.style.borderColor = '#dc3545';
                     isValid = false;
                 }
@@ -257,24 +268,86 @@ function setupNewsletterForm() {
     const newsletterForm = document.getElementById('newsletterForm');
     if (!newsletterForm) return;
     
-    newsletterForm.addEventListener('submit', function(e) {
+    newsletterForm.addEventListener('submit', async function(e) {
         e.preventDefault();
         
-        const email = this.querySelector('input[type="email"]').value;
+        const emailInput = this.querySelector('input[type="email"]');
+        const submitBtn = this.querySelector('button[type="submit"]');
         
-        if (validateEmail(email)) {
-            // Here you would typically send to a newsletter service
-            alert('Thank you for subscribing to our newsletter!');
-            this.reset();
-        } else {
-            alert('Please enter a valid email address.');
+        // Clear previous feedback
+        clearFormFeedback(this);
+        
+        // Validate email
+        if (!validateEmail(emailInput.value)) {
+            showFormFeedback(this, 'Please enter a valid email address.', 'error');
+            return;
+        }
+        
+        // Disable button during submission
+        const originalText = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Subscribing...';
+        
+        try {
+            // Create FormData
+            const formData = new FormData(this);
+            
+            // Submit to Formspree
+            const response = await fetch('https://formspree.io/f/xbdygynn', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+            
+            if (response.ok) {
+                showFormFeedback(this, 'Thank you for subscribing to my newsletter!', 'success');
+                this.reset();
+                console.log('Newsletter subscription successful');
+            } else {
+                throw new Error('Newsletter subscription failed');
+            }
+            
+        } catch (error) {
+            console.error('Newsletter error:', error);
+            showFormFeedback(this, 'Subscription failed. Please try again later.', 'error');
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalText;
         }
     });
+}
+
+// Helper Functions
+function validateEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+function showFormFeedback(form, message, type) {
+    const feedbackDiv = form.querySelector('.form-feedback');
+    if (!feedbackDiv) return;
     
-    function validateEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
+    feedbackDiv.textContent = message;
+    feedbackDiv.className = 'form-feedback ' + type;
+    feedbackDiv.style.display = 'block';
+    
+    // Scroll to feedback
+    feedbackDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+}
+
+function clearFormFeedback(form) {
+    const feedbackDiv = form.querySelector('.form-feedback');
+    if (feedbackDiv) {
+        feedbackDiv.style.display = 'none';
+        feedbackDiv.className = 'form-feedback';
     }
+}
+
+function resetButton(btnText, btnLoader) {
+    if (btnText) btnText.style.display = 'inline';
+    if (btnLoader) btnLoader.style.display = 'none';
 }
 
 // Animate skill bars when scrolled into view
@@ -346,14 +419,11 @@ document.addEventListener('keydown', function(e) {
 
 // Initialize maps (simplified for local use)
 function initializeMaps() {
-    // This is a simplified version for local development
-    // In production, you would use Leaflet.js
     console.log('Maps would be initialized here with proper API keys');
 }
 
 // Initialize charts
 function initializeCharts() {
-    // Simplified chart initialization
     console.log('Charts would be initialized here');
 }
 
@@ -362,11 +432,10 @@ function setupCVDownload() {
     const downloadBtn = document.querySelector('a[download*="CV"]');
     if (downloadBtn) {
         downloadBtn.addEventListener('click', function(e) {
-            // Track download if needed
             console.log('CV download initiated');
         });
     }
 }
 
-// Initialize when DOM is loaded
+// Initialize CV download
 document.addEventListener('DOMContentLoaded', setupCVDownload);
